@@ -54,5 +54,5 @@ with psycopg2.connect(connStr) as db:
                             %s, %s, %s, %s, %s, %s, %s,
                             ST_SetSRID(ST_Point(%s, %s), 4326)
                         );""",
-                        (id, location, source, start, end, observations, status,
-                         lon, lat))
+                    (id, location, source, start, end, observations, status,
+                     lon, lat))
