@@ -24,7 +24,7 @@ with psycopg2.connect(connStr) as db:
                        endDate DATE,
                        interval TEXT,
                        status TEXT,
-                       geometry GEOMETRY(POINT, 4326)
+                       geometry GEOMETRY(POINT, 27700)
                    );""")
 
     # Read Excel worksheet
@@ -52,7 +52,8 @@ with psycopg2.connect(connStr) as db:
         # Insert data into postgis table
         cur.execute("""INSERT INTO stations VALUES (
                             %s, %s, %s, %s, %s, %s, %s,
-                            ST_SetSRID(ST_Point(%s, %s), 4326)
+                            ST_Transform(ST_SetSRID(ST_Point(%s, %s), 4326),
+                                         27700)
                         );""",
                     (id, location, source, start, end, observations, status,
                      lon, lat))
