@@ -2,7 +2,7 @@ import psycopg2
 
 # Constants
 rho = 1027 # density of sea water (kg/m^3)
-C_p = 4180 # specific heat of water (J/kg/K)
+C_p = 3988 # specific heat of sea water (J/kg/K)
 unitConv = 10**-6 # unit conversion from Watts to Mega Watts
 # Multiply constants
 const = rho * C_p * unitConv
