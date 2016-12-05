@@ -3,7 +3,7 @@ from qgis.analysis import QgsZonalStatistics
 
 # Add polygon layer
 uri = QgsDataSourceURI()
-uri.setConnection("localhost", "5432", "coastalHeat", "postgres",
+uri.setConnection("localhost", "5432", "coastalheat", "postgres",
                   "ownwardenter")
 uri.setDataSource("public", "coastalwaters", "geometry")
 zones = QgsVectorLayer(uri.uri(), "coastalwaters", "postgres")

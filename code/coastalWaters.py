@@ -10,7 +10,7 @@ gmlPath = os.path.join(dataDir, "nrw",
                        "WaterFrameworkDirectiveCoastalWaterbodiesCycle2.gml")
 
 # Connect to postgis database
-connStr = "dbname=coastalHeat user=postgres password=ownwardenter"
+connStr = "dbname=coastalheat user=postgres password=ownwardenter"
 with psycopg2.connect(connStr) as db:
     cur = db.cursor()
 

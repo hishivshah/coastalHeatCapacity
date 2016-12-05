@@ -8,7 +8,7 @@ unitConv = 10**-6 # unit conversion from Watts to Mega Watts
 const = rho * C_p * unitConv
 
 # Connect to postgis database
-connStr = "dbname=coastalHeat user=postgres password=ownwardenter"
+connStr = "dbname=coastalheat user=postgres password=ownwardenter"
 with psycopg2.connect(connStr) as db:
     cur = db.cursor()
 
