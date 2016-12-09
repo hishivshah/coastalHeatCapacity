@@ -9,7 +9,8 @@ uri.setDataSource("public", "coastalwaters", "geometry")
 zones = QgsVectorLayer(uri.uri(), "coastalwaters", "postgres")
 
 # Raster layer
-connStr = "PG: dbname=coastalHeat user=postgres password=ownwardenter mode=2 schema=public column=rast table=sst"
+connStr = "PG: dbname=coastalHeat user=postgres password=ownwardenter " \
+          + "mode=2 schema=public column=rast table=sst"
 
 # Calculate zonal statistics
 zonalStats = QgsZonalStatistics(zones, connStr, "", 1, QgsZonalStatistics.Mean)
